@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/momotaro0307/speedButtonPlugin/issues"
   },
-  "homepage": "https://github.com/momotaro0307/speedButtonPlugin"
+  "homepage": "https://github.com/momotaro0307/speedButtonPlugin",
+  "devDependencies": {
+    "grunt": "~0.4.5"
+  }
 }
