@@ -1,5 +1,6 @@
 (function(ulizaplayer, window){
 var speedButtonSetupPlugIn = function(obj) {
+        //ulizaplayer jaascript callback
         var javascriptCallback = function javascriptCallback(playerId, event,
                 data) {
                 var PlaybackRateData = ulizaplayer(playerId).getPlaybackRateData();
