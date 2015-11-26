@@ -1,5 +1,5 @@
-
-function speedButtonSetupPlugIn(obj) {
+(function(ulizaplayer, window){
+var speedButtonSetupPlugIn = function(obj) {
         var javascriptCallback = function javascriptCallback(playerId, event,
                 data) {
                 var PlaybackRateData = ulizaplayer(playerId).getPlaybackRateData();
@@ -65,15 +65,20 @@ function speedButtonSetupPlugIn(obj) {
             playerId = obj.pluginSetup.id;
         }
         //player　にコールバック関数挿入
-        if (obj.ulizaPlayerSetup.hasOwnProperty("javascriptCallbackFunction")) {
-            obj.ulizaPlayerSetup.javascriptCallbackFunction.push(
-                javascriptCallback);
-        } else {
-            obj.ulizaPlayerSetup.javascriptCallbackFunction = [
-                javascriptCallback
-            ];
+        var arry = [];
+        if(obj.ulizaPlayerSetup.hasOwnProperty("javascriptCallbackFunction")){
+          var objArray = obj.ulizaPlayerSetup.javascriptCallbackFunction;
+          arry.push(objArray);
+          obj.ulizaPlayerSetup.javascriptCallbackFunction = arry;
+          obj.ulizaPlayerSetup.javascriptCallbackFunction.push(javascriptCallback);
+        }else{
+          obj.ulizaPlayerSetup.javascriptCallbackFunction = arry;
+          obj.ulizaPlayerSetup.javascriptCallbackFunction.push(javascriptCallback);
         }
+
 
         //player setup
         ulizaplayer(playerId).setup(obj.ulizaPlayerSetup);
     }
+    window.speedButtonSetupPlugIn = speedButtonSetupPlugIn;
+})(ulizaplayer, window);
