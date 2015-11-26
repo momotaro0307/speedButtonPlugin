@@ -1,0 +1,19 @@
+{
+  "name": "speedPlugin",
+  "version": "0.0.0",
+  "homepage": "https://github.com/momotaro0307/speedButtonPlugin",
+  "authors": [
+    "momotaro0307 <momotaro03071225@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ulizaPlayer": "https://github.com/NishimuraT/ulizaPlayer.git#master"
+  }
+}
