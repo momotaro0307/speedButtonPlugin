@@ -1,8 +1,6 @@
 (function(ulizaplayer, window){
 var speedButtonSetupPlugIn = function(obj) {
-        //ulizaplayer jaascript callback
-        var javascriptCallback = function javascriptCallback(playerId, event,
-                data) {
+        var javascriptCallback = function javascriptCallback(playerId) {
                 var PlaybackRateData = ulizaplayer(playerId).getPlaybackRateData();
                 for (var i = 0; i < PlaybackRateData.length; i++) {
                     var padding = i * obj.pluginSetup.padding;
@@ -45,7 +43,7 @@ var speedButtonSetupPlugIn = function(obj) {
                                     alpha: obj.pluginSetup.style.down.alpha
                                 }
                             }
-                        }
+                        };
                         //ボタンonclick 関数
 
                     function speedButtonClick(speedButtonId) {
@@ -57,7 +55,7 @@ var speedButtonSetupPlugIn = function(obj) {
                         //ボタン追加
                     ulizaplayer(playerId).addButton(speedButtonObject);
                 }
-            }
+            };
             //playerId 退避　及び　idがしかるべき場所になくても再生可能にする
         var playerId;
         if (obj.ulizaPlayerSetup.hasOwnProperty("id")) {
@@ -80,6 +78,6 @@ var speedButtonSetupPlugIn = function(obj) {
 
         //player setup
         ulizaplayer(playerId).setup(obj.ulizaPlayerSetup);
-    }
+    };
     window.speedButtonSetupPlugIn = speedButtonSetupPlugIn;
 })(ulizaplayer, window);
