@@ -77,6 +77,12 @@ var speedButtonSetupPlugIn = function(obj) {
           obj.ulizaPlayerSetup.javascriptCallbackFunction.push(javascriptCallback);
         }
 
+        if(obj.ulizaPlayerSetup.design.hasOwnProperty("style")){
+          obj.ulizaPlayerSetup.design.style.speedButton = {show:false};
+        }else{
+          obj.ulizaPlayerSetup.design.style = {};
+          obj.ulizaPlayerSetup.design.style.speedButton = {show:false};
+        }
 
         //player setup
         ulizaplayer(playerId).setup(obj.ulizaPlayerSetup);
