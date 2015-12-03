@@ -10,7 +10,18 @@ var speedButtonSetupPlugIn = function(obj) {
                         url[1];
                     var imgUrl = urlCreate.toString();
                     //ボタンオブジェクト生成
-                    var speedButtonObject = {
+                    var speedButtonObject;
+                     if(!obj.pluginSetup.hasOwnProperty("style")){
+                       speedButtonObject = {
+                         id:"speed_"+PlaybackRateData[i].playbackrate,
+                         url:imgUrl,
+                         onClick:speedButtonClick,
+                         layoutInfo:{
+                           right:obj.pluginSetup.right+padding,top:obj.pluginSetup.top,left:obj.pluginSetup.left+padding,alpha:1
+                         }
+                       }
+                    }else{
+                       speedButtonObject = {
                             id: "speed_" + PlaybackRateData[i].playbackrate,
                             url: imgUrl,
                             onClick: speedButtonClick,
@@ -45,6 +56,7 @@ var speedButtonSetupPlugIn = function(obj) {
                             }
                         };
                         //ボタンonclick 関数
+                    };
 
                     function speedButtonClick(speedButtonId) {
                             var PlaybackRate = speedButtonId.split("_");
