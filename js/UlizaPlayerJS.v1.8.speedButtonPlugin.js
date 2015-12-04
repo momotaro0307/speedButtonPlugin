@@ -8,7 +8,7 @@ var speedButtonSetupPlugIn = function(obj) {
                         url = obj.pluginSetup.imgUrl.split(/(?=\.[^.]+$)/),
                         urlCreate = url[0] + PlaybackRateData[i].playbackrate + url[1],
                         imgUrl = urlCreate.toString(),
-                    //ボタンオブジェクト生成
+                        //ボタンオブジェクト生成
                         speedButtonObject;
                      if(!obj.pluginSetup.hasOwnProperty("style")){
                        speedButtonObject = {
