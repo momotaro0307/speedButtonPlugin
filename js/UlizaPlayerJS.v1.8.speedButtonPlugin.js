@@ -10,9 +10,9 @@ var speedButtonSetupPlugIn = function(obj) {
                         imgUrl = urlCreate.toString(),
                         //ボタンオブジェクト生成
                         speedButtonObject;
-                     if(!obj.pluginSetup.hasOwnProperty("style")){
+                     if(!obj.pluginSetup.hasOwnProperty('style')){
                        speedButtonObject = {
-                         id:"speed_"+PlaybackRateData[i].playbackrate,
+                         id:'speed_'+PlaybackRateData[i].playbackrate,
                          url:imgUrl,
                          onClick:speedButtonClick,
                          layoutInfo:{
@@ -21,7 +21,7 @@ var speedButtonSetupPlugIn = function(obj) {
                        }
                     }else{
                        speedButtonObject = {
-                            id: "speed_" + PlaybackRateData[i].playbackrate,
+                            id: 'speed_' + PlaybackRateData[i].playbackrate,
                             url: imgUrl,
                             onClick: speedButtonClick,
                             layoutInfo: {
@@ -58,7 +58,7 @@ var speedButtonSetupPlugIn = function(obj) {
                     };
 
                     function speedButtonClick(speedButtonId) {
-                            var PlaybackRate = speedButtonId.split("_");
+                            var PlaybackRate = speedButtonId.split('_');
                             ulizaplayer(playerId).removeButton(speedButtonId);　
                             ulizaplayer(playerId).changePlaybackRate(Number(
                                 PlaybackRate[1]));
@@ -72,13 +72,13 @@ var speedButtonSetupPlugIn = function(obj) {
         var playerId,
             arry = [];
             
-        if (obj.ulizaPlayerSetup.hasOwnProperty("id")) {
+        if (obj.ulizaPlayerSetup.hasOwnProperty('id')) {
             playerId = obj.ulizaPlayerSetup.id;
         } else {
             playerId = obj.pluginSetup.id;
         }
         //player　にコールバック関数挿入
-        if(obj.ulizaPlayerSetup.hasOwnProperty("javascriptCallbackFunction")){
+        if(obj.ulizaPlayerSetup.hasOwnProperty('javascriptCallbackFunction')){
           var objArray = obj.ulizaPlayerSetup.javascriptCallbackFunction;
           arry.push(objArray);
           obj.ulizaPlayerSetup.javascriptCallbackFunction = arry;
@@ -88,7 +88,7 @@ var speedButtonSetupPlugIn = function(obj) {
           obj.ulizaPlayerSetup.javascriptCallbackFunction.push(javascriptCallback);
         }
 
-        if(obj.ulizaPlayerSetup.design.hasOwnProperty("style")){
+        if(obj.ulizaPlayerSetup.design.hasOwnProperty('style')){
           obj.ulizaPlayerSetup.design.style.speedButton = {show:false};
         }else{
           obj.ulizaPlayerSetup.design.style = {};
