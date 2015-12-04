@@ -3,14 +3,13 @@ var speedButtonSetupPlugIn = function(obj) {
         var javascriptCallback = function javascriptCallback(playerId) {
                 var PlaybackRateData = ulizaplayer(playerId).getPlaybackRateData();
                 for (var i = 0; i < PlaybackRateData.length; i++) {
-                    var padding = i * obj.pluginSetup.padding;
-                    //img url 生成
-                    var url = obj.pluginSetup.imgUrl.split(/(?=\.[^.]+$)/);
-                    var urlCreate = url[0] + PlaybackRateData[i].playbackrate +
-                        url[1];
-                    var imgUrl = urlCreate.toString();
+                    var padding = i * obj.pluginSetup.padding,
+                        //img url 生成
+                        url = obj.pluginSetup.imgUrl.split(/(?=\.[^.]+$)/),
+                        urlCreate = url[0] + PlaybackRateData[i].playbackrate + url[1],
+                        imgUrl = urlCreate.toString(),
                     //ボタンオブジェクト生成
-                    var speedButtonObject;
+                        speedButtonObject;
                      if(!obj.pluginSetup.hasOwnProperty("style")){
                        speedButtonObject = {
                          id:"speed_"+PlaybackRateData[i].playbackrate,
@@ -68,15 +67,17 @@ var speedButtonSetupPlugIn = function(obj) {
                     ulizaplayer(playerId).addButton(speedButtonObject);
                 }
             };
-            //playerId 退避　及び　idがしかるべき場所になくても再生可能にする
-        var playerId;
+            
+        //playerId 退避　及び　idがしかるべき場所になくても再生可能にする
+        var playerId,
+            arry = [];
+            
         if (obj.ulizaPlayerSetup.hasOwnProperty("id")) {
             playerId = obj.ulizaPlayerSetup.id;
         } else {
             playerId = obj.pluginSetup.id;
         }
         //player　にコールバック関数挿入
-        var arry = [];
         if(obj.ulizaPlayerSetup.hasOwnProperty("javascriptCallbackFunction")){
           var objArray = obj.ulizaPlayerSetup.javascriptCallbackFunction;
           arry.push(objArray);
