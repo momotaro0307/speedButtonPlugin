@@ -49,16 +49,6 @@
 
                 ulizaplayer(playerId).changePlaybackRate(Number(PlaybackRate[1]));
 
-            //debug start log
-            // console.log(re+"speedButtonId");
-            // console.log(re2+"crentPlaybackRate");
-            // console.log(crentPlaybackRate2);
-            // console.log(clickButton);
-            // console.log(this + "debug");
-            // console.log(clickButton.id + "debug");
-            // console.log(this.layoutInfo.top + "debug");
-            //debug end
-
             //click用の button を埋め込み
             ulizaplayer(playerId).addButton(clickButton);
 
