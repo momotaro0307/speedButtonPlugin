@@ -36,8 +36,21 @@
                     height: this.style.up.height,
                     alpha: 1
                   }
+<<<<<<< HEAD
                 }
               };
+=======
+                };
+                //click されたボタン消去
+                ulizaplayer(playerId).removeButton(speedButtonId);
+                //click後　のボタン消去
+                ulizaplayer(playerId).removeButton("click_speed_"+crentPlaybackRate);
+
+                ulizaplayer(playerId).changePlaybackRate(Number(PlaybackRate[1]));
+
+            //click用の button を埋め込み
+            ulizaplayer(playerId).addButton(clickButton);
+>>>>>>> 90e588fe69a7a39eb012172bbcd409e362b92022
 
             ulizaplayer(playerId).changePlaybackRate(Number(PlaybackRate[1]));
             ulizaplayer(playerId).removeAllButton();
